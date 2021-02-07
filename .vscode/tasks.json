@@ -1,0 +1,82 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "./node_modules/rollup/dist/bin/rollup -c",
+      "problemMatcher": {
+        "owner": "javascript",
+        "severity": "error",
+        "fileLocation": "relative",
+        "pattern": [
+          {
+            "regexp": "^\\[!\\]\\s*(.*)",
+            "message": 1
+          },
+          {
+            "regexp": "^(.*)",
+            "file": 1
+          },
+          {
+            "regexp": "^\\s*\\d+:"
+          },
+          {
+            "regexp": "^\\s*\\d+:"
+          },
+          {
+            "regexp": "^\\s*(\\d+):\\s*(.*)",
+            "line": 1,
+            "code": 2
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^\\S",
+          "endsPattern": "^created"
+        }
+      },
+      "group": "build"
+    },
+    {
+      "label": "watch",
+      "type": "shell",
+      "command": "./node_modules/rollup/dist/bin/rollup -cw",
+      "problemMatcher": {
+        "owner": "javascript",
+        "severity": "error",
+        "fileLocation": "relative",
+        "pattern": [
+          {
+            "regexp": "^\\[!\\]\\s*(.*)",
+            "message": 1
+          },
+          {
+            "regexp": "^(.*)",
+            "file": 1
+          },
+          {
+            "regexp": "^\\s*\\d+:"
+          },
+          {
+            "regexp": "^\\s*\\d+:"
+          },
+          {
+            "regexp": "^\\s*(\\d+):\\s*(.*)",
+            "line": 1,
+            "code": 2
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^bundles",
+          "endsPattern": "^created"
+        }
+      },
+      "group": "build",
+      "isBackground": true
+    }
+  ]
+}

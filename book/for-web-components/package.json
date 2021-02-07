@@ -1,0 +1,15 @@
+{
+  "name": "for-web-components",
+  "private": true,
+  "scripts": {
+    "start": "start-storybook",
+    "prepare": "build-storybook"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^6.1.17",
+    "@storybook/addon-essentials": "^6.1.17",
+    "@storybook/addon-links": "^6.1.17",
+    "@storybook/addon-notes": "^5.3.21",
+    "@storybook/html": "^6.1.17"
+  }
+}

@@ -1,0 +1,57 @@
+import { Story, Canvas, Meta, ArgsTable } from "@storybook/addon-docs/blocks"
+import DigiClock from '../../../dist/digi-clock.mjs'
+import notes from '../../../README.md'
+
+<Meta
+  title="Components/DigiClock"
+  component={DigiClock}
+  parameters={{
+    notes,
+    actions: { handles: ['tick'] },
+    controls: { disable: true, expanded: true, hideNoControlsWarning: true }
+  }}
+/>
+
+# &lt;digi-clock&gt;
+
+Shows a digital clock known from Svelte examples.
+
+## Default
+
+Default look &amp; feel:
+
+<Canvas withToolbar>
+  <Story name="Default">
+    {`
+<digi-clock></digi-clock>
+`}
+  </Story>
+</Canvas>
+
+## No Seconds
+
+Time without seconds:
+
+<Canvas withToolbar>
+  <Story name="No Seconds">
+    {`
+<digi-clock seconds=false></digi-clock>
+`}
+  </Story>
+</Canvas>
+
+## Use CEST TZ
+
+Shows the time in the CEST time zone (+01:00):
+
+<Canvas withToolbar>
+  <Story name="Use EST TZ">
+    {`
+<digi-clock offset=-300></digi-clock>
+`}
+  </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of={DigiClock} />

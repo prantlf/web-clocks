@@ -1,0 +1,58 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "attach",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "skipFiles": [
+        "${workspaceFolder}/node_modules/**/*",
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "launch",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "--inspect-brk",
+        "${workspaceRoot}/node_modules/jest/bin/jest.js",
+        "-i", "--watch", "--bail"
+      ],
+      "port": 9229,
+      "skipFiles": [
+        "${workspaceFolder}/node_modules/**/*",
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "ana-clock",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+      "args": ["-i", "ana-clock.test.js"],
+      "preLaunchTask": "watch",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outFiles": ["${workspaceRoot}/dist/*"],
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "digi-clock",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+      "args": ["-i", "--watch", "--bail", "digi-clock.test.js"],
+      "preLaunchTask": "watch",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outFiles": ["${workspaceRoot}/dist/*"],
+      "skipFiles": [
+        "${workspaceFolder}/node_modules/**/*",
+        "<node_internals>/**"
+      ]
+    }
+  ]
+}
