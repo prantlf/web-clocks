@@ -1,19 +1,16 @@
 <svelte:options tag="ana-clock" immutable={true} />
 
 <script>
-  import { onMount, tick } from 'svelte'
-  import { get_current_component } from 'svelte/internal'
+  import { createEventDispatcher, onMount, tick } from 'svelte'
   import getNow from './util/get-now'
-  import dispatchTick from './util/dispatch-tick'
 
   export let secondhand = 'true'
   export let markers = 'sixty'
   export let offset = ''
 
   const now = () => getNow(offset)
-  const notify = () => dispatchTick(host, time)
+  const dispatch = createEventDispatcher()
 
-  const host = get_current_component()
   let time = now()
   $: hours = time.getHours()
   $: mins = time.getMinutes()
@@ -22,17 +19,17 @@
     [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]
 
   let stopped
-  export function stop() {
-    stopped = true
-  }
-  export function restart() {
-    stopped = false
+  export function stop() { stopped = true }
+  export function restart() { stopped = false }
+
+  function update() {
+    time = now()
+    dispatch('tick', time)
   }
 
   onMount(async () => {
-    await tick();
-    time = now();
-    notify()
+    await tick()
+    update()
     let counter = 0
     const interval = setInterval(() => {
       if (stopped) return
@@ -40,8 +37,7 @@
         if (++counter < 60) return
         counter = 0
       }
-      time = now()
-      dispatchTick(host, time)
+      update()
     }, 1000)
     return () => clearInterval(interval)
   })
