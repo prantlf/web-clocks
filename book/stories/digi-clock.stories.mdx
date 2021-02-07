@@ -1,6 +1,6 @@
 import { Story, Canvas, Meta, ArgsTable } from "@storybook/addon-docs/blocks"
-import DigiClock from '../../../dist/digi-clock.mjs'
-import notes from '../../../README.md'
+import DigiClock from '../../dist/digi-clock.mjs'
+import notes from '../../README.md'
 
 <Meta
   title="Components/DigiClock"
@@ -48,6 +48,37 @@ Shows the time in the CEST time zone (+01:00):
   <Story name="Use EST TZ">
     {`
 <digi-clock offset=-300></digi-clock>
+`}
+  </Story>
+</Canvas>
+
+## Configurable
+
+Configurable parameters:
+
+<Canvas withToolbar>
+  <Story name="Configurable" argTypes={{
+    seconds: {
+      description: 'disables the second part',
+      control: 'boolean',
+      table: { defaultValue: { summary: true } }
+    },
+    offset: {
+      description: 'adds the offset in minutes to UTC',
+      control: 'number',
+      table: { defaultValue: { summary: 0 } }
+    },
+    onTick: {
+      description: 'when the second or the minute hand moves',
+      action: 'tick'
+    }
+  }} args={{
+    seconds: false, offset: 60
+  }} parameters={{
+    controls: { disable: false }
+  }}>
+    {({ seconds, offset }) => `
+<digi-clock seconds=${seconds} offset=${offset}></digi-clock>
 `}
   </Story>
 </Canvas>
