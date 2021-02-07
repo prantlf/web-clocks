@@ -2,16 +2,18 @@
 
 <script>
   import { createEventDispatcher, onMount, tick } from 'svelte'
+  import { get_current_component } from 'svelte/internal'
+  import dispatchTick from './util/dispatch-tick'
   import getNow from './util/get-now'
   import pad from './util/pad'
 
   export let seconds = 'true'
   export let offset = ''
 
+  const host = get_current_component()
   const now = () => getNow(offset)
-  const dispatch = createEventDispatcher()
-
   let time = now()
+
   $: hours = time.getHours()
   $: mins = time.getMinutes()
   $: secs = time.getSeconds()
@@ -22,7 +24,7 @@
 
   function update() {
     time = now()
-    dispatch('tick', time)
+    dispatchTick(host, time)
   }
 
   onMount(async () => {
