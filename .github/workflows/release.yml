@@ -27,7 +27,8 @@ jobs:
           - args: [--frozen-lockfile, --no-verify-store-integrity]
     - name: Test
       uses: GabrielBB/xvfb-action@v1
-      run: npm test
+      with:
+        run: npm test
     - name: Publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -24,4 +24,5 @@ jobs:
           run_install: |
             - args: [--frozen-lockfile, --no-verify-store-integrity]
       - uses: GabrielBB/xvfb-action@v1
-      - run: npm test
+        with:
+          run: npm test
