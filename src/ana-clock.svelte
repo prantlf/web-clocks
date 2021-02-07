@@ -14,6 +14,10 @@
   const now = () => getNow(offset)
   let time = now()
 
+  $: tick().then(() => host.setAttribute('secondhand', secondhand))
+  $: tick().then(() => host.setAttribute('markers', markers))
+  $: tick().then(() => host.setAttribute('offset', offset))
+
   $: hours = time.getHours()
   $: mins = time.getMinutes()
   $: secs = time.getSeconds()
