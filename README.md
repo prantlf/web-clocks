@@ -81,6 +81,16 @@ import { AnaClock, DigiClock } from 'web-clocks'
 |--------|------------------------------------------|-----------------|
 | `tick` | when the second or the minute hand moves | current `Date`  |
 
+## Contributing
+
+In lieu of a formal styleguide, take care to maintain the existing coding style. Lint and test your code using `npm test`.
+
+## License
+
+Copyright (c) 2021 Ferdinand Prantl
+
+Licensed under the MIT license.
+
 [a Svelte example]: https://svelte.dev/repl/clock?version=3.30.1
 [another Svelte example]: https://svelte.dev/repl/a15e5bf484bf4eddafe68996d4235187?version=3.18.2
 [Web components]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
