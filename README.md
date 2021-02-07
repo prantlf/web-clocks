@@ -1,4 +1,4 @@
-# Analog and Digital Clocks as Web Components
+# Analogue and Digital Clocks as Web Components
 
 [![NPM version](https://badge.fury.io/js/web-clocks.png)](http://badge.fury.io/js/web-clocks)
 [![Build Status](https://github.com/prantlf/web-clocks/workflows/Test/badge.svg)](https://github.com/prantlf/web-clocks/actions)
@@ -7,7 +7,7 @@
 
 [![NPM Downloads](https://nodei.co/npm/web-clocks.png?downloads=true&stars=true)](https://www.npmjs.com/package/web-clocks)
 
-[Web components] showing an analog clock known from [a Svelte example] and a digital clock similar to [another Svelte example].
+[Web components] showing an analogue clock known from [a Svelte example] and a digital clock similar to [another Svelte example].
 
 ![Example](./example.png)
 
@@ -32,7 +32,7 @@ See the [on-line demo] or the [storybook].
 ```
 
 ```html
-<!-- Load either analog or digital clock from a local installation -->
+<!-- Load either analogue or digital clock from a local installation -->
 <script type=module src=node_modules/web-clocks/dist/ana-clock.mjs></script>
 <script type=module src=node_modules/web-clocks/dist/digi-clock.mjs></script>
 ```
@@ -47,7 +47,7 @@ See the [on-line demo] or the [storybook].
 
 ```html
 <script type=module>>
-  // Load either analog or digital clock and use their classes
+  // Load either analogue or digital clock and use their classes
   import AnaClock from '../dist/ana-clock.mjs'
   import DigiClock from '../dist/digi-clock.mjs'
   ...
@@ -55,18 +55,18 @@ See the [on-line demo] or the [storybook].
 ```
 
 ```js
-// Include either analog or digital clock in your application bundle
+// Include either analogue or digital clock in your application bundle
 import { AnaClock, DigiClock } from 'web-clocks'
 ```
 
 ### Attributes
 
-| Attribute    | Description                             | Values                                  | Default |
-|--------------|-----------------------------------------|-----------------------------------------|---------|
-| `markers`    | chooses the density of markers (analog) | `sixty` \| `twelve` \| `four` \| `none` | `sixty` |
-| `secondhand` | disables the second hand (analog)       | boolean                                 | `false` |
-| `seconds`    | disables the second part (digital)      | boolean                                 | `false` |
-| `offset`     | adds the offset in minutes to UTC       | number of minutes                       | `0`     |
+| Attribute    | Description                               | Values                                  | Default |
+|--------------|-------------------------------------------|-----------------------------------------|---------|
+| `markers`    | chooses the density of markers (analogue) | `sixty` \| `twelve` \| `four` \| `none` | `sixty` |
+| `secondhand` | disables the second hand (analogue)       | boolean                                 | `false` |
+| `seconds`    | disables the second part (digital)        | boolean                                 | `false` |
+| `offset`     | adds the offset in minutes to UTC         | number of minutes                       | `0`     |
 
 ### Methods
 

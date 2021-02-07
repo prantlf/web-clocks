@@ -1,7 +1,7 @@
 <svelte:options tag="digi-clock" immutable={true} />
 
 <script>
-  import { createEventDispatcher, onMount, tick } from 'svelte'
+  import { onMount, tick } from 'svelte'
   import { get_current_component } from 'svelte/internal'
   import dispatchTick from './util/dispatch-tick'
   import getNow from './util/get-now'
