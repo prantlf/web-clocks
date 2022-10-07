@@ -4,11 +4,21 @@
 [![Build Status](https://github.com/prantlf/web-clocks/workflows/Test/badge.svg)](https://github.com/prantlf/web-clocks/actions)
 [![Dependency Status](https://david-dm.org/prantlf/web-clocks.svg)](https://david-dm.org/prantlf/web-clocks)
 [![devDependency Status](https://david-dm.org/prantlf/web-clocks/dev-status.svg)](https://david-dm.org/prantlf/web-clocks#info=devDependencies)
-
-[![NPM Downloads](https://nodei.co/npm/web-clocks.png?downloads=true&stars=true)](https://www.npmjs.com/package/web-clocks)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/prantlf/web-clocks)
 
 [Web components] showing an analogue clock known from [a Svelte example] and a digital clock similar to [another Svelte example].
 
+<!--
+```
+<custom-element-demo>
+  <template>
+    <script type=module src=https://unpkg.com/web-clocks@0.0.1/dist/index.mjs></script>
+    <ana-clock></ana-clock>
+    <digi-clock></digi-clock>
+  </template>
+</custom-element-demo>
+```
+-->
 ![Example](./example.png)
 
 See the [on-line demo] or the [storybook].
