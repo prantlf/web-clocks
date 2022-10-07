@@ -4,7 +4,7 @@
 [![Build Status](https://github.com/prantlf/web-clocks/workflows/Test/badge.svg)](https://github.com/prantlf/web-clocks/actions)
 [![Dependency Status](https://david-dm.org/prantlf/web-clocks.svg)](https://david-dm.org/prantlf/web-clocks)
 [![devDependency Status](https://david-dm.org/prantlf/web-clocks/dev-status.svg)](https://david-dm.org/prantlf/web-clocks#info=devDependencies)
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/prantlf/web-clocks)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/web-clocks)
 
 [Web components] showing an analogue clock known from [a Svelte example] and a digital clock similar to [another Svelte example].
 
