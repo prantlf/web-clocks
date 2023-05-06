@@ -1,0 +1,85 @@
+import { Story, Canvas, Meta } from '@storybook/blocks'
+import * as AnaClockStories from './ana-clock.stories.js'
+
+<Meta of={AnaClockStories} />
+
+# \<ana-clock>
+
+Showing an analogue clock known from Svelte examples.
+
+```html
+<ana-clock secondhand="true" markers="sixty" offset="0"></ana-clock>
+
+<script type="module" src="https://unpkg.com/web-clocks@1.0.0/dist/ana-clock.mjs"></script>
+```
+
+### Attributes
+
+| Attribute    | Description                       | Values                                  | Default |
+|--------------|-----------------------------------|-----------------------------------------|---------|
+| `markers`    | chooses the density of markers    | `sixty` \| `twelve` \| `four` \| `none` | `sixty` |
+| `secondhand` | disables the second hand          | boolean                                 | `true`  |
+| `offset`     | adds the offset in minutes to UTC | number of minutes                       | `0`     |
+
+### Methods
+
+| Name        | Description                                                 |
+|-------------|-------------------------------------------------------------|
+| `stop()`    | stops the clock                                             |
+| `restart()` | sets the clock to the current time and starts ticking again |
+
+### Events
+
+| Name   | Triggered                                | Details         |
+|--------|------------------------------------------|-----------------|
+| `tick` | when the second or the minute hand moves | current `Date`  |
+
+## Stories
+
+### Default
+
+Default look & feel:
+
+<Canvas withToolbar>
+  <Story of={AnaClockStories.Default} />
+</Canvas>
+
+### Twelve Markers
+
+Show twelwe markers (for five-minute intervals) only:
+
+<Canvas withToolbar>
+  <Story of={AnaClockStories.TwelveMarkers} />
+</Canvas>
+
+### Four Markers
+
+Show four markers (for quoters of hour) only:
+
+<Canvas withToolbar>
+  <Story of={AnaClockStories.FourMarkers} />
+</Canvas>
+
+### No Markers
+
+Show no markers:
+
+<Canvas withToolbar>
+  <Story of={AnaClockStories.NoMarkers} />
+</Canvas>
+
+### No Second Hand
+
+Show no second hand:
+
+<Canvas withToolbar>
+  <Story of={AnaClockStories.NoSecondHand} />
+</Canvas>
+
+### Use CET TZ
+
+Shows the time in the CET time zone (+01:00):
+
+<Canvas withToolbar>
+  <Story of={AnaClockStories.UseCetTz} />
+</Canvas>

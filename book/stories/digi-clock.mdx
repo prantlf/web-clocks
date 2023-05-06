@@ -1,0 +1,68 @@
+import { Story, Canvas, Meta } from '@storybook/blocks'
+import * as DigiClockStories from './digi-clock.stories.js'
+
+<Meta of={DigiClockStories} />
+
+# \<digi-clock>
+
+Shows a digital clock known from Svelte examples.
+
+```html
+<digi-clock seconds="true" offset="0"></digi-clock>
+
+<script type="module" src="https://unpkg.com/web-clocks@1.0.0/dist/digi-clock.mjs"></script>
+```
+
+### Attributes
+
+| Attribute    | Description                       | Values            | Default |
+|--------------|-----------------------------------|-------------------|---------|
+| `seconds`    | disables the second part          | boolean           | `false` |
+| `offset`     | adds the offset in minutes to UTC | number of minutes | `0`     |
+
+### Methods
+
+| Name        | Description                                                 |
+|-------------|-------------------------------------------------------------|
+| `stop()`    | stops the clock                                             |
+| `restart()` | sets the clock to the current time and starts ticking again |
+
+### Events
+
+| Name   | Triggered                                | Details         |
+|--------|------------------------------------------|-----------------|
+| `tick` | when the second or the minute hand moves | current `Date`  |
+
+## Stories
+
+### Default
+
+Default look & feel:
+
+<Canvas withToolbar>
+  <Story of={DigiClockStories.Default} />
+</Canvas>
+
+### No Seconds
+
+Time without seconds:
+
+<Canvas withToolbar>
+  <Story of={DigiClockStories.NoSeconds} />
+</Canvas>
+
+### Use CET TZ
+
+Shows the time in the CET time zone (+01:00):
+
+<Canvas withToolbar>
+  <Story of={DigiClockStories.UseEstTz} />
+</Canvas>
+
+### Configurable
+
+Configurable parameters:
+
+<Canvas withToolbar>
+  <Story of={DigiClockStories.Configurable} />
+</Canvas>
