@@ -1,6 +1,6 @@
 {
   "name": "web-clocks",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Web components showing an analogue clock and a digital clock known from Svelte examples.",
   "homepage": "https://github.com/prantlf/web-clocks#readme",
   "author": {
