@@ -1,11 +1,18 @@
-module.exports = {
+export default {
   stories: [
-    '../stories/**/*.stories.mdx'
+    '../stories'
   ],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-links',
-    '@storybook/addon-notes',
-    '@storybook/addon-a11y'
-  ]
+    '@storybook/addon-a11y',
+    '@storybook/addon-mdx-gfm'
+  ],
+  framework: {
+    name: '@storybook/html-vite'
+  },
+  docs: {
+    autodocs: false,
+    defaultName: 'Documentation'
+  }
 }
