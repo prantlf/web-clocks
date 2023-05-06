@@ -1,20 +1,24 @@
 root: true
 parserOptions:
-  ecmaVersion: 2019
+  ecmaVersion: 2022
   sourceType: module
 env:
   es6: true
   browser: true
   jest: true
-plugins:
-  - svelte3
 extends:
   - eslint:recommended
-overrides:
-  -
-    files:
-      - '*.svelte'
-    processor: svelte3/svelte3
-settings:
-  svelte3/compiler-options:
-    customElement: true
+  - plugin:svelte/recommended
+rules:
+  svelte/valid-compile: 0
+# settings:
+#   svelte/compiler-options:
+#     customElement: true
+# overrides:
+#   -
+#     files: 
+#       - "*.svelte"
+#     parser: svelte-eslint-parser
+#     parserOptions:
+#       compilerOptions:
+#         customElement: true

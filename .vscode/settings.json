@@ -7,5 +7,10 @@
     "**/pnpm-lock.yaml": true,
     "**/storybook-static": true
   },
-  "svelte.plugin.typescript.diagnostics.enable": false
+  "files.associations": {
+    "*.svelte": "html"
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "svelte"],
+  "svelte.plugin.typescript.diagnostics.enable": false,
+  "mdx.experimentalLanguageServer": true
 }

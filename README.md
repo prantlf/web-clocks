@@ -29,26 +29,26 @@ See the [on-line demo] or the [storybook].
 
 ```html
 <ana-clock></ana-clock>
-<ana-clock secondhand=false></ana-clock>
+<ana-clock secondhand="false"></ana-clock>
 <digi-clock></digi-clock>
-<digi-clock seconds=false></digi-clock>
+<digi-clock seconds="false"></digi-clock>
 ```
 
 2: Include the implementation of the web component on your page, typically at the bottom of the `body` element. Choose the way that fits your scenario the base.
 
 ```html
 <!-- Load both clocks from the NPM CDN -->
-<script type=module src=https://unpkg.com/web-clocks@1.0.0/dist/index.mjs></script>
+<script type="module" src="https://unpkg.com/web-clocks@1.0.0/dist/index.mjs"></script>
 ```
 
 ```html
 <!-- Load either analogue or digital clock from a local installation -->
-<script type=module src=node_modules/web-clocks/dist/ana-clock.mjs></script>
-<script type=module src=node_modules/web-clocks/dist/digi-clock.mjs></script>
+<script type="module" src="node_modules/web-clocks/dist/ana-clock.mjs"></script>
+<script type="module" src="node_modules/web-clocks/dist/digi-clock.mjs"></script>
 ```
 
 ```html
-<script type=module>>
+<script type="module">
   // Load both clocks and use their classes
   import { AnaClock, DigiClock } from '../dist/index.mjs'
   ...
@@ -56,7 +56,7 @@ See the [on-line demo] or the [storybook].
 ```
 
 ```html
-<script type=module>>
+<script type="module">
   // Load either analogue or digital clock and use their classes
   import AnaClock from '../dist/ana-clock.mjs'
   import DigiClock from '../dist/digi-clock.mjs'
@@ -74,7 +74,7 @@ import { AnaClock, DigiClock } from 'web-clocks'
 | Attribute    | Description                               | Values                                  | Default |
 |--------------|-------------------------------------------|-----------------------------------------|---------|
 | `markers`    | chooses the density of markers (analogue) | `sixty` \| `twelve` \| `four` \| `none` | `sixty` |
-| `secondhand` | disables the second hand (analogue)       | boolean                                 | `false` |
+| `secondhand` | disables the second hand (analogue)       | boolean                                 | `true`  |
 | `seconds`    | disables the second part (digital)        | boolean                                 | `false` |
 | `offset`     | adds the offset in minutes to UTC         | number of minutes                       | `0`     |
 

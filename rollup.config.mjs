@@ -1,8 +1,8 @@
 import svelte from 'rollup-plugin-svelte'
 import resolve from '@rollup/plugin-node-resolve'
-import esbuild from 'rollup-plugin-esbuild'
+import { minify } from 'rollup-plugin-swc-minify'
 import livereload from 'rollup-plugin-livereload'
-import pkg from './package.json'
+import pkg from './package.json' assert { type: 'json' }
 
 function debug() {
   return [
@@ -28,7 +28,7 @@ function release() {
   return[
     svelte({ compilerOptions: { customElement: true } }),
     resolve({ browser: true, dedupe: ['svelte'] }),
-    esbuild({ minify: true, sourceMap: true })
+    minify()
   ]
 }
 
@@ -41,19 +41,19 @@ const watch = { clearScreen: false }
 
 export default [
   {
-    input: 'src/ana-clock.js',
-    output: { file: 'dist/ana-clock.mjs', 'format': 'es', sourcemap: true },
+    input: 'src/ana-clock.svelte',
+    output: { file: 'dist/ana-clock.mjs', sourcemap: true },
     plugins, watch
   },
   {
-    input: 'src/digi-clock.js',
-    output: { file: 'dist/digi-clock.mjs', 'format': 'es', sourcemap: true },
+    input: 'src/digi-clock.svelte',
+    output: { file: 'dist/digi-clock.mjs', sourcemap: true },
     plugins, watch
   },
   {
     input: 'src/index.js',
     output: [
-      { file: pkg.module, 'format': 'es', sourcemap: true },
+      { file: pkg.module, sourcemap: true },
       { file: pkg.main, 'format': 'umd', name, sourcemap: true }
     ],
     plugins, watch
